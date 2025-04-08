@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+    <h2 align="center">User Signup</h2>
+    <form action="LoginAuth.html" onsubmit="return validate()">
+        <table align="center">
+            <tr>
+                <td><label for="first_name">First Name:</label></td>
+                <td><input type="text" name="first_name" id="fname" ></td>
+            </tr>
+            <tr>
+                <td><p id="fmsg" style="color: red;"></p></td>
+            </tr>
+            <tr>
+                <td><label for="last_name">Last Name:</label></td>
+                <td><input type="text" name="last_name" id="lname"></td>
+            </tr>
+            <tr>
+                <td><p id="lmsg" style="color: red;"></p></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" name="email" id="email" ></td>
+            </tr>
+            <tr>
+                <td><p id="emsg" style="color: red;"></p></td>
+            </tr>
+            
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" name="password" id="pass" ></td>
+            </tr>
+            <tr>
+                <td><p id="pmsg" style="color: red;"></p></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Signup">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function validate()
+        {
+            let fName=document.getElementById("fname").value;
+            let lName=document.getElementById("lname").value;
+            let email=document.getElementById("email").value;
+            let password=document.getElementById("pass").value;
+            let fmsg=document.getElementById("fmsg");
+            let lmsg=document.getElementById("lmsg");
+            let emsg=document.getElementById("emsg");
+            let pmsg=document.getElementById("pmsg");
+
+            if (fName=="")
+        {
+            fmsg.innerHTML="pleae fill up userid"
+            return false;
+
+        }
+        else if(lName=="")
+        {
+            lmsg.innerHTML="pleae fill up userid"
+            return false;
+        }
+        else if(email=="")
+        {
+            emsg.innerHTML="pleae fill up userid"
+            return false;
+        }
+        else if (!email.includes("@") || email.indexOf("@") !== email.lastIndexOf("@")) {
+            emsg.innerHTML = "Email must contain exactly one '@' symbol";
+                return false;
+            }
+        else if(password=="")
+        {
+            pmsg.innerHTML="pleae fill up userid"
+            return false;
+        }
+        
+        return true;
+           
+        }
+
+    </script>
+</body>
+</html>

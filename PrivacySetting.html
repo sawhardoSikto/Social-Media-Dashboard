@@ -6,32 +6,51 @@
     <title>Privacy Setting</title>
 </head>
 <body>
-    <header></header>
+    <header><h2>Privacy Setting </h2></header>
     <main>
-        <h2>Privacy Setting </h2>
+        
         <form action="">
-            <label for="">Post Visibility</label>
-            <select name="" id="post-visibility">
-                <option value="public">Public</option>
-                <option value="private">Private</option>
-                <option value="custom">Custom</option>
+            <fieldset>
 
-            </select>
+                <legend>Post Visibility</legend>
+                <label for="post-visibility">Choose visibility for your posts:</label><br />
+                <select name="" id="post-visibility" onchange="changevisibility()">
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                    <option value="custom">Custom</option>
+    
+                </select>
+              
+            </fieldset>
             <br><br>
-            <label for="">Block a User: </label>
-            <input type="text" name="" id="block-user" placeholder="Enter Username">
-            <input type="button" name="" id="" value="Block">
+            <fieldset>
+
+                <label for="">Block a User: </label>
+                <input type="text" name="" id="block-user" placeholder="Enter Username">
+                <input type="button" name="" id="" value="Block">
+            </fieldset>
             <br><br>
-            <h3>Activity Log</h3>
-            <ul>
-                <li>Liked a post - 2 mins ago</li>
-                <li>Upadate profile -1 hour ago</li>
-                <li>Changed Password - Yesterday</li>
-            </ul>
+            <section>
+
+                <h3>Activity Log</h3>
+                <ul id="activity-log">
+                    <li>Liked a post - 2 mins ago</li>
+                    <li>Upadate profile -1 hour ago</li>
+                    <li>Changed Password - Yesterday</li>
+                </ul>
+            </section>
 
         </form>
 
     </main>
+    <script>
+        function changevisibility()
+        {
+            const visibility=document.getElementById("post-visibility").value;
+            alert("post visibility changed to :",visibility)
+
+        }
+    </script>
     
 </body>
 </html>
