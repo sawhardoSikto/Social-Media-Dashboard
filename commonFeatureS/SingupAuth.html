@@ -14,7 +14,7 @@
                 <td><input type="text" name="first_name" id="fname" ></td>
             </tr>
             <tr>
-                <td><p id="fmsg" style="color: red;"></p></td>
+                <td><p id="fmsg" class="panic" style="color: red;"></p></td>
             </tr>
             <tr>
                 <td><label for="last_name">Last Name:</label></td>
@@ -30,6 +30,18 @@
             <tr>
                 <td><p id="emsg" style="color: red;"></p></td>
             </tr>
+            <tr>
+                <td><label for="gender">Gender:</label></td>
+                <td>
+                    <input type="radio" name="gender" id="">male
+                    <input type="radio" name="gender" id="">female
+                    <input type="radio" name="gender" id="">other
+
+                </td>
+            </tr>
+            <tr>
+                <td><p id="gmsg" style="color: red;"></p></td>
+            </tr>
             
             <tr>
                 <td><label for="password">Password:</label></td>
@@ -40,7 +52,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <input type="submit" value="Signup">
+                    <a href="LoginAuth.html"><button>SignUp</button></a>
                 </td>
             </tr>
         </table>
@@ -64,12 +76,20 @@
             return false;
 
         }
-        else if(lName=="")
+        else
+        {
+            fmsg.innerHTML="";
+            
+        }
+         if(lName=="")
         {
             lmsg.innerHTML="pleae fill up userid"
             return false;
         }
-        else if(email=="")
+        else{
+            lmsg.innerHTML="";
+        }
+         if(email=="")
         {
             emsg.innerHTML="pleae fill up userid"
             return false;
@@ -78,12 +98,20 @@
             emsg.innerHTML = "Email must contain exactly one '@' symbol";
                 return false;
             }
-        else if(password=="")
+            else{
+                emsg.innerHTML="";
+
+            }
+         if(password=="")
         {
             pmsg.innerHTML="pleae fill up userid"
             return false;
         }
-        
+        else
+        {
+            pmsg.innerHTML="";
+        }
+
         return true;
            
         }

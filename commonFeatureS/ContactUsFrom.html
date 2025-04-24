@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us form</title>
+</head>
+<body>
+    <header>
+        <div align="center"><h2 >Contact Us</h2></div>
+    </header>
+    <main>
+        <form action="" onsubmit="return validate()">
+            <table align="center">
+                <tr>
+                    <td>
+                        <p>Full Name:</p>
+                    </td>
+                    <td>
+                        <input type="text" name="" id="fname">
+                    </td>
+                    <tr>
+                        <td>
+                            <p id="nmsg" style="color: red;"></p>
+                        </td>
+                    </tr>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="text" name="email" id="email" ></td>
+                </tr>
+                <tr>
+                    <td><p id="emsg" style="color: red;"></p></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Your Message:</p>
+                    </td>
+                    <td>
+                        <input type="text" name="" id="message">
+                    </td>
+                    <tr>
+                        <td>
+                            <p id="mmsg" style="color: red;"></p>
+                        </td>
+                    </tr>
+                </tr>
+                <tr>
+                    <td>
+                        <p>CHAPCHA: what is 4+3</p>
+                    </td>
+                    <td>
+                        <input type="text" name="" id="capcha">
+                    </td>
+                    <tr>
+                        <td>
+                            <p id="cmsg" style="color: red;"></p>
+                        </td>
+                    </tr>
+                </tr>
+                <tr>
+                   <td> <a href=""><button>SUBMIT</button></a></td>
+                </tr>
+            </table>
+        </form>
+    </main>
+    <script>
+        function validate()
+        {
+
+               let fName=document.getElementById("fname").value;
+                
+                let email=document.getElementById("email").value;
+                let capcha=document.getElementById("capcha").value;
+                let cmsg=document.getElementById("cmsg")
+                let fmsg=document.getElementById("nmsg");
+                let emsg=document.getElementById("emsg");
+               
+    
+                if (fName=="")
+            {
+                fmsg.innerHTML="pleae fill up userid"
+                return false;
+    
+            }
+            else
+            {
+                fmsg.innerHTML="";
+                
+            }
+            if(capcha==""){
+                cmsg.innerHTML="fill in the capcha field";
+                return false;
+            }
+            else
+            {
+                cmsg.innerHTML=""
+            }
+             
+             if(email=="")
+            {
+                emsg.innerHTML="pleae fill up email"
+                return false;
+            }
+            else if (!email.includes("@") || email.indexOf("@") !== email.lastIndexOf("@")) {
+                emsg.innerHTML = "Email must contain exactly one '@' symbol";
+                    return false;
+                }
+                else{
+                    emsg.innerHTML="";
+    
+                }
+                return true
+        }
+
+    </script>
+</body>
+</html>

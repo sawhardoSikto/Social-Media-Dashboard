@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2 align="center">Login</h2>
+    <form onsubmit="return validate()">
+        <table align="center">
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="text" name="email" id="email"></td>
+            </tr>
+            <tr>
+                <td><p id="emsg" style="color: red;"></p></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" name="password" id="pass" ></td>
+            </tr>
+            <tr>
+                <td><p id="lmsg" style="color: red;"></p></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <a href="/ActivityFeed.html"><button>Login</button></a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <a href="reset-password.html">Forgot Password?</a><br>
+                    <a href="email-verification.html">Verify Email</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+    function validate()
+    {
+        let email=document.getElementById("email").value;
+        let pass=document.getElementById("pass").value;
+    
+        let fmsg=document.getElementById("emsg");
+        let lmsg=document.getElementById("lmsg");
+
+        if (pass=="")
+        {
+            fmsg.innerHTML="please fill up password"
+            return false;
+        }
+        else
+        {
+            fmsg.innerHTML=""
+        }
+        if (email==="")
+    {
+       fmsg.innerHTML="please fill up userid";
+       return false;
+
+    }
+    else if (!email.includes("@") || email.indexOf("@") !== email.lastIndexOf("@")) {
+            emsg.innerHTML = "Email must contain exactly one '@' symbol";
+                return false;
+    
+    }
+    else
+    {
+        fmsg.innerHTML=""
+    }
+    return true;
+        
+
+        
+
+    }
+
+</script>
+</body>
+</html>
