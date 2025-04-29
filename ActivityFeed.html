@@ -4,49 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity Feed</title>
+    <style>
+        body{
+            font-family: arial,sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        main {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 1);
+            max-width: 800px;
+            margin: auto;
+        }
+        h2,h3,h4{
+            color: #333;
+        }
+        #feedTypeLabel{
+            margin-top: 10px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .story-label
+        {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: #333;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            margin: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+
+
+        }
+        .story-label:hover{
+            background-color: #4CAF50;
+            color: white;
+        }
+        .post{
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #fdfdfd;
+
+        }
+        .controls a{
+            margin-right: 10px;
+            text-decoration: none;
+            color: #007bff;
+
+        }
+        .controls:hover{
+            text-decoration: underline;
+        }
+        .comment-input{
+            padding: 5px 10px;
+            width: 70%;
+            margin-top: 10px;
+
+        }
+        button{
+            padding: 5px 10px;
+            background-color: #007bff;
+            color:white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #0056b3;
+        }
+
+        
+    </style>
 </head>
 <body>
     <header></header>
     <main>
         <h2>Activity Feed</h2>
         <div>
-            <label for=""><input type="radio" name="feedtype" id="">Most Recent</label>
-            <label for=""><input type="radio" name="feedtype" id="">Top Posts</label>
+            <label for=""><input type="radio" name="feedtype" id="" onclick="showFeedType('Most Recent')" checked>Most Recent</label>
+            <label for=""><input type="radio" name="feedtype" id="" onclick="showFeedType('Top Posts')">Top Posts</label>
+            <p id="feedTypeLabel" style="color: green;"> Showing: Most Recent</p>
+
         </div>
         <div>
             <h4>Story</h4>
-            <label for="">A</label>
-            <label for="">B</label>
-            <label for="">C</label>
-            <label for="">D</label>
-            <label for="">E</label>
+            <label class="story-label"  for="">A</label>
+            <label class="story-label" for="">B</label>
+            <label class="story-label" for="">C</label>
+            <label class="story-label" for="">D</label>
+            <label class="story-label" for="">E</label>
         </div>
         <div>
             <h3>Feed post</h3>
-            <div style="border: 1px solid gray;">
-                <p> <strong>@sawhardo</strong>waching movie!</p>
+            <div class="post">
+                <p> <strong>@sawhardo</strong> waching movie!</p>
                 <p class="controls">
-                    <a href="#">Like (10)</a>
+                    <a href="#" onclick="likepost(this)">Like (<span class="like-count">10</span>)</a>
                     <a href="#">See all comments (20)</a>
                     <br />
                     <br />
-                    <a><input type="text" placeholder="Write a comment..."></a>
-                    <button>comment</button>
+                    <input type="text" class="comment-input" placeholder="Write a comment...">
+                    <button >comment</button>
+                    <div class="comment"></div>
                 </p>
             </div>
             <br />
-            <div style="border: 1px solid gray;">
-                <p> <strong>@sawhardo</strong>playing Badminton!</p>
+            <div class="post">
+                <p> <strong>@sawhardo</strong> playing badminton!</p>
                 <p class="controls">
-                    <a href="#">Like (12)</a>
-                    <a href="#">See all comments (15)</a>
+                    <a href="#"onclick="likepost(this)">Like (<span class="like-count">10</span>)</a>
+                    <a href="#">See all comments (20)</a>
                     <br />
                     <br />
-                    <a><input type="text" placeholder="Write a comment..."></a>
-                    <button>comment</button>
+                    <input type="text" class="comment-input" placeholder="Write a comment...">
+                    <button >comment</button>
+                    <div class="comment"></div>
                 </p>
             </div>
         </div>
     </main>
+    <script>
+        function likepost(link)
+        {
+            const like=link.querySelector(".like-count")
+            let count=parseInt(like.innerHTML);
+            like.innerHTML=count+1;
+
+
+        }
+        function showFeedType(type)
+        {
+            const lebel=document.getElementById("feedTypeLabel")
+            lebel.innerHTML="Showing: "+ type;
+        }
+
+    </script>
 </body>
 </html>
