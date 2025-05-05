@@ -2,53 +2,43 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <title>Edit Profile</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="edit-body">
+    <div class="edit-container">
+        <h3 class="edit-title">Edit Your Profile</h3>
+        <img src="https://static.vecteezy.com/system/resources/previews/009/398/577/original/man-avatar-clipart-illustration-free-png.png"
+                 alt="Avatar" class="profile-avatar" width="100" height="100">
 
-    <h3>Edit Your Profile</h3>
-    <form onsubmit="return validateEditProfileForm()">
-        <table>
-            <tr>
-                <td><label for="name">Full Name:</label></td>
-                <td><input type="text" id="name" name="name" /></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <p id="nameError"></p>
-                </td>
-            </tr>
+        <form class="edit-form" onsubmit="return validateEditProfileForm()">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" class="form-input" value="John Doe"/>
+                <p id="nameError" class="error-message"></p>
+            </div>
 
-            <tr>
-                <td><label for="email">Email:</label></td>
-                <td><input type="text" id="email" name="email" /></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <p id="emailError"></p>
-                </td>
-            </tr>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" class="form-input" value="johndoe@example.com"/>
+                <p id="emailError" class="error-message"></p>
+            </div>
 
-            <tr>
-                <td><label for="phone">Phone Number:</label></td>
-                <td><input type="text" id="phone" name="phone" /></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <p id="phoneError"></p>
-                </td>
-            </tr>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" class="form-input" value="01234567891"/>
+                <p id="phoneError" class="error-message"></p>
+            </div>
 
-            <tr>
-                <td><input type="submit" value="Save Changes" /></td>
-            </tr>
-        </table>
-        <p id="successMsg"></p>
-    </form>
+            <button type="submit" class="submit-btn">Save Changes</button>
+            <p id="successMsg" class="success-message"></p>
+        </form>
+
+        <a href="change-avatar.html" class="profile-link">Change Avatar</a><br>
+        <a href="update-password.html" class="profile-link">Update Password</a>
+    </div>
 
     <script>
         function validateEditProfileForm() {
@@ -61,52 +51,47 @@
             var successMsg = document.getElementById("successMsg");
             var isValid = true;
 
+           
+            successMsg.innerHTML = "";
+            nameError.innerHTML = "";
+            emailError.innerHTML = "";
+            phoneError.innerHTML = "";
+
+            
             if (name === "") {
                 nameError.innerHTML = "Name cannot be empty.";
-                nameError.style.color = "red";
                 isValid = false;
-            } else {
-                nameError.innerHTML = "";
             }
 
+          
             if (email === "") {
                 emailError.innerHTML = "Email cannot be empty.";
-                emailError.style.color = "red";
                 isValid = false;
             } else if (!(email.includes("@") && email.includes("."))) {
-                emailError.innerHTML = "Enter a isValid email address.";
-                emailError.style.color = "red";
+                emailError.innerHTML = "Enter a valid email address.";
                 isValid = false;
             } else {
                 var at = email.indexOf("@"), dot = email.lastIndexOf(".");
                 if (at < 1 || dot < at + 2 || dot + 2 >= email.length) {
-                    emailError.innerHTML = "Enter a isValid email address.";
-                    emailError.style.color = "red";
+                    emailError.innerHTML = "Enter a valid email address.";
                     isValid = false;
-                } else {
-                    emailError.innerHTML = "";
                 }
             }
 
+            
             if (phone === "") {
                 phoneError.innerHTML = "Phone number cannot be empty.";
-                phoneError.style.color = "red";
                 isValid = false;
             } else if (isNaN(phone) || phone.length != 11) {
                 phoneError.innerHTML = "Phone number must be 11 digits.";
-                phoneError.style.color = "red";
                 isValid = false;
-            } else {
-                phoneError.innerHTML = "";
             }
 
             if (isValid) {
                 successMsg.innerHTML = "Profile updated successfully!";
-                successMsg.style.color = "green";
-
             }
 
-            return false;
+            return false; 
         }
     </script>
 </body>
