@@ -11,24 +11,24 @@
     <div class="edit-container">
         <h3 class="edit-title">Edit Your Profile</h3>
         <img src="https://static.vecteezy.com/system/resources/previews/009/398/577/original/man-avatar-clipart-illustration-free-png.png"
-                 alt="Avatar" class="profile-avatar" width="100" height="100">
+            alt="Avatar" class="profile-avatar" width="100" height="100">
 
         <form class="edit-form" onsubmit="return validateEditProfileForm()">
             <div class="form-group">
                 <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" class="form-input" value="John Doe"/>
+                <input type="text" id="name" name="name" class="form-input" value="John Doe" />
                 <p id="nameError" class="error-message"></p>
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" id="email" name="email" class="form-input" value="johndoe@example.com"/>
+                <input type="text" id="email" name="email" class="form-input" value="johndoe@example.com" />
                 <p id="emailError" class="error-message"></p>
             </div>
 
             <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="text" id="phone" name="phone" class="form-input" value="01234567891"/>
+                <input type="text" id="phone" name="phone" class="form-input" value="01234567891" />
                 <p id="phoneError" class="error-message"></p>
             </div>
 
@@ -37,7 +37,8 @@
         </form>
 
         <a href="change-avatar.html" class="profile-link">Change Avatar</a><br>
-        <a href="update-password.html" class="profile-link">Update Password</a>
+        <a href="update-password.html" class="profile-link">Update Password</a><br>
+        <a href="view-profile.html" class="password-link">Back to View Profile</a>
     </div>
 
     <script>
@@ -51,19 +52,19 @@
             var successMsg = document.getElementById("successMsg");
             var isValid = true;
 
-           
+
             successMsg.innerHTML = "";
             nameError.innerHTML = "";
             emailError.innerHTML = "";
             phoneError.innerHTML = "";
 
-            
+
             if (name === "") {
                 nameError.innerHTML = "Name cannot be empty.";
                 isValid = false;
             }
 
-          
+
             if (email === "") {
                 emailError.innerHTML = "Email cannot be empty.";
                 isValid = false;
@@ -78,7 +79,7 @@
                 }
             }
 
-            
+
             if (phone === "") {
                 phoneError.innerHTML = "Phone number cannot be empty.";
                 isValid = false;
@@ -91,7 +92,7 @@
                 successMsg.innerHTML = "Profile updated successfully!";
             }
 
-            return false; 
+            return false;
         }
     </script>
 </body>
