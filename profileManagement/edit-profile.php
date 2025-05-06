@@ -36,9 +36,9 @@
             <p id="successMsg" class="success-message"></p>
         </form>
 
-        <a href="change-avatar.html" class="profile-link">Change Avatar</a><br>
-        <a href="update-password.html" class="profile-link">Update Password</a><br>
-        <a href="view-profile.html" class="password-link">Back to View Profile</a>
+        <a href="change-avatar.php" class="profile-link">Change Avatar</a><br>
+        <a href="update-password.php" class="profile-link">Update Password</a><br>
+        <a href="view-profile.php" class="password-link">Back to View Profile</a>
     </div>
 
     <script>

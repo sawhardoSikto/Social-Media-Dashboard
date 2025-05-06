@@ -17,11 +17,11 @@
             </div>
         </div>
 
-        <form action="replyInterface.html">
+        <form action="replyInterface.php">
             <button type="submit" class="reply-link">Reply</button>
         </form>
 
-        <a href="reactionSelector.html" class="nav-link">Back to Reactions</a>
+        <a href="reactionSelector.php" class="nav-link">Back to Reactions</a>
     </div>
 </body>
 

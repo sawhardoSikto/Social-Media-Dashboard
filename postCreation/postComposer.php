@@ -10,7 +10,7 @@
 <body class="composer-body">
     <div class="composer-container">
         <h2>Create a Post</h2>
-        <form action="mediaUploader.html" onsubmit="return validatePostComposerForm()">
+        <form action="mediaUploader.php" onsubmit="return validatePostComposerForm()">
             <textarea class="composer-textarea" placeholder="What's on your mind?"></textarea>
 
             <div class="composer-options">

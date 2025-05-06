@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <a href="commentThread.html" class="nav-link">Go to Comments</a>
+        <a href="commentThread.php" class="nav-link">Go to Comments</a>
     </div>
 </body>
 

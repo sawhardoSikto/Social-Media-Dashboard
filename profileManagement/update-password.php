@@ -30,7 +30,7 @@
             <button type="submit" class="password-submit-btn">Change Password</button>
         </form>
 
-        <a href="edit-profile.html" class="password-link">Back to Edit Profile</a>
+        <a href="edit-profile.php" class="password-link">Back to Edit Profile</a>
     </div>
 </body>
 

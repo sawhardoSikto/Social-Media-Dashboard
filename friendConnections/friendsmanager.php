@@ -46,8 +46,8 @@
             </tbody>
         </table>
 
-        <a href="followRequests.html" class="nav-link">Manage Requests</a><br>
-        <a href="suggestionEngine.html" class="nav-link">People You May Know</a>
+        <a href="followRequests.php" class="nav-link">Manage Requests</a><br>
+        <a href="suggestionEngine.php" class="nav-link">People You May Know</a>
     </div>
 </body>
 

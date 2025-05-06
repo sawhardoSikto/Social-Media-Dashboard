@@ -33,7 +33,7 @@
             </tbody>
         </table>
 
-        <a href="friendsManager.html" class="nav-link">Back to Friends Manager</a>
+        <a href="friendsManager.php" class="nav-link">Back to Friends Manager</a>
     </div>
 </body>
 

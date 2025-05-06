@@ -36,7 +36,7 @@
                 </tr>
             </tbody>
         </table>
-        <a href="homeDashboard.html" class="nav-link">Back to Dashboard</a>
+        <a href="homeDashboard.php" class="nav-link">Back to Dashboard</a>
     </div>
 </body>
 

@@ -16,7 +16,7 @@
             <label><input type="checkbox"> Enable date-based grouping</label><br><br>
             <button type="submit">Apply Settings</button>
         </form>
-        <a href="albumCreator.html" class="nav-link">Back to Album Creator</a>
+        <a href="albumCreator.php" class="nav-link">Back to Album Creator</a>
     </div>
 </body>
 

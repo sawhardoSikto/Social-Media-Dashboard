@@ -10,7 +10,7 @@
 <body class="uploader-body">
     <div class="uploader-container">
         <h2>Upload Photos/Videos</h2>
-        <form action="previewMode.html" enctype="multipart/form-data" onsubmit="return validateMediaUploadForm()">
+        <form action="previewMode.php" enctype="multipart/form-data" onsubmit="return validateMediaUploadForm()">
             <input type="file" name="mediaFiles" class="uploader-input" accept="image/*,video/*" multiple
                 id="uploadImage">
 

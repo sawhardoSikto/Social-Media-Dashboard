@@ -1,3 +1,8 @@
+<?php
+session_start();
+if (isset($_COOKIE['status'])){
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,8 +34,18 @@
         </tr>
     </table>
     <br>
-    <a href="edit-profile.html" class="profile-link">Edit Profile</a><br>
+    <a href="edit-profile.php" class="profile-link">Edit Profile</a><br>
+
+    <a href="../logout.php">logout</a>
    
 </body>
 
 </html>
+
+<?php
+
+}
+else{
+    header('location: ../loginAuth.php');
+}
+?>
