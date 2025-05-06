@@ -1,0 +1,116 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.composer-container,
+.uploader-container,
+.preview-container {
+    background-color: #fff;
+    max-width: 600px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Post Composer */
+.composer-textarea {
+    width: 95%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.composer-options label {
+    margin-right: 15px;
+}
+
+.composer-tools {
+    margin: 15px 0;
+}
+
+.composer-tools button {
+    margin-right: 10px;
+    padding: 6px 10px;
+    border: none;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.composer-next-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Media Uploader */
+.uploader-input {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.uploader-schedule {
+    margin: 15px 0;
+}
+
+.uploader-next-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Preview Mode */
+.preview-content {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #fafafa;
+}
+
+.preview-media {
+    margin-top: 10px;
+    height: 150px;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.preview-btn {
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
