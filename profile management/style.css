@@ -1,0 +1,284 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* view profile css */
+
+.profile-body {
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-title {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.profile-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.profile-label {
+    padding: 12px 16px;
+    font-weight: bold;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    width: 150px;
+    vertical-align: middle;
+}
+
+.profile-data {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+.profile-avatar {
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+
+.profile-link {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 16px;
+    border-radius: 4px;
+
+}
+
+.profile-link:hover {
+    background-color: #0056b3;
+}
+
+/* edit profile css */
+
+
+.edit-body {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.edit-container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.edit-title {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #1e3a8a;
+}
+
+
+.edit-form .form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 15px;
+
+}
+
+.form-input:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+
+.error-message {
+    color: #dc2626;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.success-message {
+    color: #16a34a;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+.submit-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* avatar page css */
+.avatar-body {
+
+    padding: 20px;
+}
+
+.avatar-container {
+    background-color: #ffffff;
+    width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.avatar-title {
+    margin-bottom: 20px;
+}
+
+.avatar-preview {
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.avatar-form {
+    text-align: left;
+}
+
+.avatar-form-group {
+    margin-bottom: 15px;
+}
+
+.avatar-form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.avatar-input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.avatar-submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.avatar-submit-btn:hover {
+    background-color: #218838;
+}
+
+.avatar-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.avatar-link:hover {
+    text-decoration: underline;
+}
+
+/* password page css */
+
+.password-body {
+
+    padding: 20px;
+}
+
+.password-container {
+    background-color: #ffffff;
+    width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.password-title {
+    margin-bottom: 20px;
+}
+
+.password-form {
+    text-align: left;
+}
+
+.password-form-group {
+    margin-bottom: 15px;
+}
+
+.password-form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.password-input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.password-submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.password-submit-btn:hover {
+    background-color: #1d4ed8;
+}
+
+.password-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.password-link:hover {
+    text-decoration: underline;
+}
