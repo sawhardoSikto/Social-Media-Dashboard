@@ -146,8 +146,8 @@ if (isset($_SESSION['status'])){
 <body>
     <header></header>
     <main>
-        <a href="DirectMessaging.php" class="message-button">💬 Message</a>
-        <a href=" commonFeatureS/Search_Filter.php" class="search-button">Search</a>
+        <a href="../DirectMessaging/DirectMessaging.php" class="message-button">💬 Message</a>
+        <a href="../commonFeatureS/Search_Filter.php" class="search-button">Search</a>
       
         <h2>Activity Feed</h2>
         <div>
@@ -217,7 +217,7 @@ if (isset($_SESSION['status'])){
 else
 
     {
-        header('location: commonFeatureS/LoginAuth.html');
+        header('location: ../commonFeatureS/LoginAuth.html');
 
     }
 ?>

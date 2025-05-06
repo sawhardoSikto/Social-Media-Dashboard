@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
 else
 
     {
-        header('location: commonFeatureS/loginAuth.html');
+        header('location: ../commonFeatureS/loginAuth.html');
 
     }
 ?>
