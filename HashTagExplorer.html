@@ -1,42 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HashTag Explorer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HashTag Explorer</title>
+  <style>
+    body {
+      font-family: arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    main {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      width: 60%;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="button"] {
+      padding: 8px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="button"]:hover {
+      background-color: #0056b3;
+    }
+
+    .results {
+      margin-top: 20px;
+    }
+
+    .post {
+      border: 1px solid gray;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      background-color: #fdfdfd;
+    }
+
+    .controls a {
+      margin-right: 10px;
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    .controls a:hover {
+      text-decoration: underline;
+    }
+
+    .comment-input {
+      padding: 5px 10px;
+      width: 70%;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .comment {
+      margin-top: 10px;
+      font-style: italic;
+      color: #555;
+    }
+
+    strong {
+      color: #000;
+    }
+  </style>
 </head>
 <body>
-    <header></header>
-    <main>
-        <h2>HashTag Explorer</h2>
-        <input type="text" name="" id="HashTag" placeholder="#SearchHashTag">
-        <input type="button" name="" id="search" value="Search">
-        <div>
-            <p>Showing results for : <Strong>#travelgoal</Strong></p>
-            <div style="border: 1px solid gray;">
-                <p> <strong>@sawhardo</strong>waching movie! #travelgoal</p>
-                <p class="controls">
-                    <a href="#">Like (10)</a>
-                    <a href="#">See all comments (20)</a>
-                    <br />
-                    <br />
-                    <a><input type="text" placeholder="Write a comment..."></a>
-                    <button>comment</button>
-                </p>
-            </div>
-            <br />
-            <div style="border: 1px solid gray;">
-                <p> <strong>@sawhardo</strong>playing Badminton! #travelgoal 🔥</p>
-                <p class="controls">
-                    <a href="#">Like (12)</a>
-                    <a href="#">See all comments (15)</a>
-                    <br />
-                    <br />
-                    <a><input type="text" placeholder="Write a comment..."></a>
-                    <button>comment</button>
-                </p>
-            </div>
-        </div>
-    </main>
+  <header></header>
+  <main>
+    <h2>HashTag Explorer</h2>
+    <input type="text" id="HashTag" placeholder="#SearchHashTag" />
+    <input type="button" id="search" value="Search" />
+
+    <div class="results">
+      <p>Showing results for: <strong>#travelgoal</strong></p>
+
+      <div class="post">
+        <p><strong>@sawhardo</strong> watching movie! #travelgoal</p>
+        <p class="controls">
+          <a href="#" onclick="likePost(this)">Like (<span class="like-count">10</span>)</a>
+          <a href="#">See all comments (20)</a>
+          <br /><br />
+          <input type="text" class="comment-input" placeholder="Write a comment..." />
+          <button onclick="addComment(this)">comment</button>
+          <div class="comment"></div>
+        </p>
+      </div>
+
+      <div class="post">
+        <p><strong>@sawhardo</strong> playing Badminton! #travelgoal 🔥</p>
+        <p class="controls">
+          <a href="#" onclick="likePost(this)">Like (<span class="like-count">12</span>)</a>
+          <a href="#">See all comments (15)</a>
+          <br /><br />
+          <input type="text" class="comment-input" placeholder="Write a comment..." />
+          <button onclick="addComment(this)">comment</button>
+          <div class="comment"></div>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function likePost(link) {
+      const likeCount = link.querySelector(".like-count");
+      let count = parseInt(likeCount.innerText);
+      likeCount.innerText = count + 1;
+    }
+
+    function addComment(button) {
+      const input = button.previousElementSibling;
+      const commentText = input.value.trim();
+      const commentDiv = button.nextElementSibling;
+
+      if (commentText === "") {
+        alert("Please enter a comment.");
+        return;
+      }
+
+      commentDiv.innerHTML = "You: " + commentText;
+      input.value = "";
+    }
+  </script>
 </body>
 </html>

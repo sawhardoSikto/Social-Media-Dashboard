@@ -1,81 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-top: 60px;
+    }
+
+    form {
+      width: 100%;
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    table {
+      width: 100%;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .links a {
+      display: block;
+      color: #007bff;
+      text-decoration: none;
+      margin: 5px 0;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    p.error {
+      color: red;
+      font-size: 14px;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
-    <h2 align="center">Login</h2>
-    <form onsubmit="return validate()">
-        <table align="center">
-            <tr>
-                <td><label for="email">Email:</label></td>
-                <td><input type="text" name="email" id="email"></td>
-            </tr>
-            <tr>
-                <td><p id="emsg" style="color: red;"></p></td>
-            </tr>
-            <tr>
-                <td><label for="password">Password:</label></td>
-                <td><input type="password" name="password" id="pass" ></td>
-            </tr>
-            <tr>
-                <td><p id="lmsg" style="color: red;"></p></td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <a href="/ActivityFeed.html"><button>Login</button></a>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <a href="reset-password.html">Forgot Password?</a><br>
-                    <a href="email-verification.html">Verify Email</a>
-                </td>
-            </tr>
-        </table>
-    </form>
-    <script>
-    function validate()
-    {
-        let email=document.getElementById("email").value;
-        let pass=document.getElementById("pass").value;
-    
-        let fmsg=document.getElementById("emsg");
-        let lmsg=document.getElementById("lmsg");
+  
+  
 
-        if (pass=="")
-        {
-            fmsg.innerHTML="please fill up password"
-            return false;
-        }
-        else
-        {
-            fmsg.innerHTML=""
-        }
-        if (email==="")
-    {
-       fmsg.innerHTML="please fill up userid";
-       return false;
+  <h2>Login</h2>
+  
+  <form action="../ActivityFeed.html" onsubmit="return validate()">
+    <table>
+      <tr>
+        <td><label for="email">Email:</label></td>
+        <td><input type="text" name="email" id="email" /></td>
+      </tr>
+      <tr>
+        <td colspan="2"><p id="emsg" class="error"></p></td>
+      </tr>
+      <tr>
+        <td><label for="password">Password:</label></td>
+        <td><input type="password" name="password" id="pass" /></td>
+      </tr>
+      <tr>
+        <td colspan="2"><p id="lmsg" class="error"></p></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <button type="submit">Login</button>
+        </td>
+      </tr>
+    </table>
+    <div class="links">
+      <a href="reset-password.html">Forgot Password?</a>
+      <a href="email-verification.html">Verify Email</a>
+    </div>
+  </form>
 
+  <script>
+    function validate() {
+      let email = document.getElementById("email").value.trim();
+      let pass = document.getElementById("pass").value.trim();
+
+      let emsg = document.getElementById("emsg");
+      let lmsg = document.getElementById("lmsg");
+
+      emsg.innerHTML = "";
+      lmsg.innerHTML = "";
+
+      let isValid = true;
+
+      if (email === "") {
+        emsg.innerHTML = "Please fill in email";
+        isValid = false;
+      } else if (!email.includes("@") || email.indexOf("@") !== email.lastIndexOf("@")) {
+        emsg.innerHTML = "Email must contain exactly one '@' symbol";
+        isValid = false;
+      }
+
+      if (pass === "") {
+        lmsg.innerHTML = "Please fill in password";
+        isValid = false;
+      }
+
+      return isValid;
     }
-    else if (!email.includes("@") || email.indexOf("@") !== email.lastIndexOf("@")) {
-            emsg.innerHTML = "Email must contain exactly one '@' symbol";
-                return false;
-    
-    }
-    else
-    {
-        fmsg.innerHTML=""
-    }
-    return true;
-        
-
-        
-
-    }
-
-</script>
+  </script>
 </body>
 </html>
