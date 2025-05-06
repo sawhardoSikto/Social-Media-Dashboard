@@ -14,7 +14,7 @@
             <textarea class="reply-textarea" placeholder="Reply with @mention if needed..."></textarea>
             <button type="submit" class="reply-btn">Post Reply</button>
         </form>
-        <a href="commentThread.html" class="nav-link">Back to Comments</a>
+        <a href="commentThread.php" class="nav-link">Back to Comments</a>
     </div>
 </body>
 

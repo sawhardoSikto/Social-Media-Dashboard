@@ -11,20 +11,20 @@
     <div class=" container">
         <h2>Social Media Dashboard</h2>
         <div class="widgets">
-            <div class="widget" onclick="location.href='analyticsOverview.html'">
+            <div class="widget" onclick="location.href='analyticsOverview.php'">
                 <h3>Total Posts</h3>
                 <p>152</p>
             </div>
-            <div class="widget" onclick="location.href='analyticsOverview.html'">
+            <div class="widget" onclick="location.href='analyticsOverview.php'">
                 <h3>Followers</h3>
                 <p>2,430</p>
             </div>
-            <div class="widget" onclick="location.href='analyticsOverview.html'">
+            <div class="widget" onclick="location.href='analyticsOverview.php'">
                 <h3>Engagement</h3>
                 <p>87%</p>
             </div>
         </div>
-        <a href="quickActions.html" class="nav-link">Go to Quick Actions</a>
+        <a href="quickActions.php" class="nav-link">Go to Quick Actions</a>
     </div>
 </body>
 

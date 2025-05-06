@@ -11,11 +11,11 @@
     <div class=" container">
         <h2>Quick Actions</h2>
         <ul class="quick-list">
-            <li><button onclick="location.href='../PostCreation/postComposer.html'">Create Post</button></li>
+            <li><button onclick="location.href='../PostCreation/postComposer.php'">Create Post</button></li>
             <li><button onclick="alert('Scheduler opened')">Schedule Post</button></li>
             <li><button onclick="alert('Messages opened')">Check Messages</button></li>
         </ul>
-        <a href="homeDashboard.html" class="nav-link">Back to Dashboard</a>
+        <a href="homeDashboard.php" class="nav-link">Back to Dashboard</a>
     </div>
 </body>
 

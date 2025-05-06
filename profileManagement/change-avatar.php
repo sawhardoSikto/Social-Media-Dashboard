@@ -26,7 +26,7 @@
 
         </form>
 
-        <a href="edit-profile.html" class="avatar-link">Back to Edit Profile</a>
+        <a href="edit-profile.php" class="avatar-link">Back to Edit Profile</a>
     </div>
 
     <script>

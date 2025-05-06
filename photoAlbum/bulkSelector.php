@@ -20,7 +20,7 @@
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8bXXlgCBVRH1uLmaHZJ4qXyy_QiTCvLlOhw&s"></label>
         </div>
         <button>Continue</button>
-        <a href="sharingControls.html" class="nav-link">Go to Sharing Controls</a>
+        <a href="sharingControls.php" class="nav-link">Go to Sharing Controls</a>
     </div>
 </body>
 

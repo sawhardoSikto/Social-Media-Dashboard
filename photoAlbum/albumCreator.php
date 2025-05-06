@@ -19,7 +19,7 @@
             <button type="submit">Save Album</button>
             <p id="albumSuccessMsg" class="success-message"></p>
         </form>
-        <a href="bulkSelector.html" class="nav-link">Go to Bulk Selector</a>
+        <a href="bulkSelector.php" class="nav-link">Go to Bulk Selector</a>
     </div>
 
     <script>
