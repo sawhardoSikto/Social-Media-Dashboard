@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION['status'])){
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -236,3 +242,27 @@ document.addEventListener("DOMContentLoaded", function () {
 </body>
 
 </html>
+
+
+<?php
+}
+else
+
+    {
+        header('location: commonFeatureS/loginAuth.html');
+
+    }
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+

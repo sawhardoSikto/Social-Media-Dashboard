@@ -48,7 +48,7 @@
       border-radius: 5px;
     }
 
-    button {
+    .button {
       padding: 10px 20px;
       background-color: #007bff;
       border: none;
@@ -58,7 +58,7 @@
       font-weight: bold;
     }
 
-    button:hover {
+    .button:hover {
       background-color: #0056b3;
     }
 
@@ -91,7 +91,7 @@
 
   <h2>Login</h2>
   
-  <form action="../ActivityFeed.html" onsubmit="return validate()">
+  <form method="post" action="loginCheck.php" onsubmit="return validate()">
     <table>
       <tr>
         <td><label for="email">Email:</label></td>
@@ -109,7 +109,7 @@
       </tr>
       <tr>
         <td colspan="2" align="center">
-          <button type="submit">Login</button>
+          <input type="submit" name="submit" id="" class="button" value="Login">
         </td>
       </tr>
     </table>

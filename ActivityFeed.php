@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION['status'])){
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -140,8 +146,9 @@
 <body>
     <header></header>
     <main>
-        <a href="DirectMessaging.html" class="message-button">💬 Message</a>
-        <a href="/commonFeatureS/Search&Filter.html" class="search-button">Search</a>
+        <a href="DirectMessaging.php" class="message-button">💬 Message</a>
+        <a href=" commonFeatureS/Search_Filter.php" class="search-button">Search</a>
+      
         <h2>Activity Feed</h2>
         <div>
             <label for=""><input type="radio" name="feedtype" id="" onclick="showFeedType('Most Recent')" checked>Most
@@ -205,3 +212,15 @@
 </body>
 
 </html>
+<?php
+}
+else
+
+    {
+        header('location: commonFeatureS/LoginAuth.html');
+
+    }
+?>
+
+
+
