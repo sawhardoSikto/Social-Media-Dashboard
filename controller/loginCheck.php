@@ -8,7 +8,7 @@
             echo "null username/password!";
         }else if($username === $password){
             $_SESSION['status'] = true;
-            header('location: ../ActivityFeed/ActivityFeed.php');
+            header('location: ../view/ActivityFeed.php');
             //echo "valid user!";
         }else{
             echo "invalid user!";

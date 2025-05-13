@@ -123,7 +123,7 @@ if (isset($_SESSION['status'])){
 else
 
     {
-        header('location: ../commonFeatureS/loginAuth.html');
+        header('location: loginAuth.html');
 
     }
 ?>
