@@ -75,14 +75,17 @@
             font-style: italic;
             color: red;
         }
+        .singupLabel{
+            text-align: center;
+        }
     </style>
     
    
 </head>
 <body>
-    <h2 align="center">User Signup</h2>
-    <form action="LoginAuth.html" onsubmit="return validate()">
-        <table align="center">
+    <h2 class="singupLabel">User Signup</h2>
+    <form action="../controller/ValidationSignupPHP.php" onsubmit="return validate()">
+        <table>
             <tr>
                 <td><label for="first_name">First Name:</label></td>
                 <td><input type="text" name="first_name" id="fname" ></td>
@@ -180,6 +183,10 @@
         {
             pmsg.innerHTML="pleae fill up userid"
             return false;
+        }
+        else if (password.length < 8) {
+            pmsg.innerHTML = "Password must be at least 8 characters long";
+            return  false;
         }
         else
         {

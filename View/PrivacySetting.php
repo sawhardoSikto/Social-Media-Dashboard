@@ -1,3 +1,8 @@
+<?php
+session_start();
+if (isset($_SESSION['status'])) {
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +16,12 @@
       margin: 0;
       padding: 20px;
     }
-  
+
     header h1 {
       text-align: center;
       color: #333;
     }
-  
+
     main {
       max-width: 700px;
       background-color: #fff;
@@ -25,25 +30,25 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-  
+
     fieldset {
       border: 1px solid #ccc;
       border-radius: 6px;
       padding: 15px 20px;
       margin-bottom: 20px;
     }
-  
+
     legend {
       font-weight: bold;
       color: #007bff;
     }
-  
+
     label {
       font-weight: bold;
       display: block;
       margin-bottom: 5px;
     }
-  
+
     select, input[type="text"] {
       width: 100%;
       padding: 8px;
@@ -53,7 +58,7 @@
       border: 1px solid #ccc;
       font-size: 16px;
     }
-  
+
     button {
       padding: 8px 16px;
       background-color: #007bff;
@@ -63,28 +68,39 @@
       cursor: pointer;
       font-weight: bold;
     }
-  
+
     button:hover {
       background-color: #0056b3;
     }
-  
+
+    .delete-button {
+      background-color: #dc3545;
+      margin-top: 30px;
+    }
+
+    .delete-button:hover {
+      background-color: #c82333;
+    }
+
     ul {
       list-style-type: disc;
       padding-left: 20px;
     }
-  
+
     ul#activity-log li,
     ul#blocked-users li {
       margin-bottom: 6px;
     }
-  
+
     section h2 {
       color: #333;
       margin-bottom: 10px;
     }
+
+    .center {
+      text-align: center;
+    }
   </style>
-  
-  
 </head>
 <body>
   <header>
@@ -103,8 +119,6 @@
         </select>
       </fieldset>
 
-      <br />
-
       <fieldset>
         <legend>Block a User</legend>
         <label for="block-user">Enter username to block:</label><br />
@@ -112,8 +126,6 @@
         <button type="button" onclick="blockUser()">Block</button>
         <ul id="blocked-users"></ul>
       </fieldset>
-
-      <br />
 
       <section>
         <h2>Activity Log</h2>
@@ -124,6 +136,13 @@
         </ul>
       </section>
     </form>
+
+    <!-- Delete Account Button -->
+    <div class="center">
+      <form action="accountDeletation.php" method="get">
+        <button type="submit" class="delete-button">Delete My Account</button>
+      </form>
+    </div>
   </main>
 
   <script>
@@ -159,3 +178,9 @@
   </script>
 </body>
 </html>
+
+<?php
+} else {
+  header('location: LoginAuth.html');
+}
+?>
