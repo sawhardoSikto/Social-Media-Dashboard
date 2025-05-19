@@ -1,202 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-    
-        h2 {
-            margin-top: 30px;
-            color: #333;
-        }
-    
-        form {
-            background-color: #ffffff;
-            padding: 25px 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            margin: 30px auto;
-        }
-    
-        table {
-            width: 100%;
-        }
-    
-        label {
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 5px;
-        }
-    
-        input[type="text"],
-        input[type="email"],
-        input[type="password"] {
-            width: 95%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-    
-        input[type="radio"] {
-            margin-right: 5px;
-        }
-    
-        input[type="submit"] {
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-    
-        input[type="submit"]:hover {
-            background-color: #218838;
-        }
-    
-        p {
-            margin: 0;
-            font-size: 14px;
-        }
-    
-        .panic {
-            font-style: italic;
-            color: red;
-        }
-        .singupLabel{
-            text-align: center;
-        }
-    </style>
-    
-   
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      margin-top: 30px;
+      color: #333;
+      text-align: center;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 25px 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: 30px auto;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    label {
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 95%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    input[type="submit"] {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #218838;
+    }
+
+    .panic {
+      font-style: italic;
+      color: red;
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .links a {
+      color: #007bff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <h2 class="singupLabel">User Signup</h2>
-    <form action="../controller/ValidationSignupPHP.php" onsubmit="return validate()">
-        <table>
-            <tr>
-                <td><label for="first_name">First Name:</label></td>
-                <td><input type="text" name="first_name" id="fname" ></td>
-            </tr>
-            <tr>
-                <td><p id="fmsg" class="panic" style="color: red;"></p></td>
-            </tr>
-            <tr>
-                <td><label for="last_name">Last Name:</label></td>
-                <td><input type="text" name="last_name" id="lname"></td>
-            </tr>
-            <tr>
-                <td><p id="lmsg" style="color: red;"></p></td>
-            </tr>
-            <tr>
-                <td><label for="email">Email:</label></td>
-                <td><input type="email" name="email" id="email" ></td>
-            </tr>
-            <tr>
-                <td><p id="emsg" style="color: red;"></p></td>
-            </tr>
-            <tr>
-                <td><label for="gender">Gender:</label></td>
-                <td>
-                    <input type="radio" name="gender" id="" value="male">male
-                    <input type="radio" name="gender" id="female">female
-                    <input type="radio" name="gender" id="other">other
+  <h2>User Signup</h2>
+  <form action="../controller/ValidationSignupPHP.php" onsubmit="return validate()">
+    <table>
+      <tr>
+        <td><label for="first_name">First Name:</label></td>
+        <td><input type="text" name="first_name" id="fname"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><p id="fmsg" class="panic"></p></td>
+      </tr>
 
-                </td>
-            </tr>
-            <tr>
-                <td><p id="gmsg" style="color: red;"></p></td>
-            </tr>
-            
-            <tr>
-                <td><label for="password">Password:</label></td>
-                <td><input type="password" name="password" id="pass" ></td>
-            </tr>
-            <tr>
-                <td><p id="pmsg" style="color: red;"></p></td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <input type="submit" value="SignUp">
-                </td>
-            </tr>
-        </table>
-    </form>
+      <tr>
+        <td><label for="last_name">Last Name:</label></td>
+        <td><input type="text" name="last_name" id="lname"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><p id="lmsg" class="panic"></p></td>
+      </tr>
 
-    <script>
-        function validate()
-        {
-            let fName=document.getElementById("fname").value;
-            let lName=document.getElementById("lname").value;
-            let email=document.getElementById("email").value;
-            let password=document.getElementById("pass").value;
-            let fmsg=document.getElementById("fmsg");
-            let lmsg=document.getElementById("lmsg");
-            let emsg=document.getElementById("emsg");
-            let pmsg=document.getElementById("pmsg");
+      <tr>
+        <td><label for="email">Email:</label></td>
+        <td><input type="email" name="email" id="email"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><p id="emsg" class="panic"></p></td>
+      </tr>
 
-            if (fName=="")
-        {
-            fmsg.innerHTML="pleae fill up userid"
-            return false;
+      <tr>
+        <td><label for="gender">Gender:</label></td>
+        <td>
+          <input type="radio" name="gender" value="male"> Male
+          <input type="radio" name="gender" value="female"> Female
+          <input type="radio" name="gender" value="other"> Other
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"><p id="gmsg" class="panic"></p></td>
+      </tr>
 
-        }
-        else
-        {
-            fmsg.innerHTML="";
-            
-        }
-         if(lName=="")
-        {
-            lmsg.innerHTML="pleae fill up userid"
-            return false;
-        }
-        else{
-            lmsg.innerHTML="";
-        }
-         if(email=="")
-        {
-            emsg.innerHTML="pleae fill up userid"
-            return false;
-        }
-        else if (!email.includes("@") || email.indexOf("@") !== email.lastIndexOf("@")) {
-            emsg.innerHTML = "Email must contain exactly one '@' symbol";
-                return false;
-            }
-            else{
-                emsg.innerHTML="";
+      <tr>
+        <td><label for="password">Password:</label></td>
+        <td><input type="password" name="password" id="pass"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><p id="pmsg" class="panic"></p></td>
+      </tr>
 
-            }
-         if(password=="")
-        {
-            pmsg.innerHTML="pleae fill up userid"
-            return false;
-        }
-        else if (password.length < 8) {
-            pmsg.innerHTML = "Password must be at least 8 characters long";
-            return  false;
-        }
-        else
-        {
-            pmsg.innerHTML="";
-        }
+      <tr>
+        <td colspan="2" align="center">
+          <input type="submit" value="SignUp">
+        </td>
+      </tr>
 
-        return true;
-           
-        }
+      <tr>
+        <td colspan="2" class="links">
+          Already have an account? <a href="LoginAuth.html">Login</a>
+        </td>
+      </tr>
+    </table>
+  </form>
 
-    </script>
+  <script>
+    function validate() {
+      let fName = document.getElementById("fname").value;
+      let lName = document.getElementById("lname").value;
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("pass").value;
+
+      let fmsg = document.getElementById("fmsg");
+      let lmsg = document.getElementById("lmsg");
+      let emsg = document.getElementById("emsg");
+      let pmsg = document.getElementById("pmsg");
+
+      fmsg.innerHTML = lmsg.innerHTML = emsg.innerHTML = pmsg.innerHTML = "";
+
+      if (fName === "") {
+        fmsg.innerHTML = "Please fill up First Name";
+        return false;
+      }
+      if (lName === "") {
+        lmsg.innerHTML = "Please fill up Last Name";
+        return false;
+      }
+      if (email === "") {
+        emsg.innerHTML = "Please fill up Email";
+        return false;
+      } else if (!email.includes("@") || email.indexOf("@") !== email.lastIndexOf("@")) {
+        emsg.innerHTML = "Email must contain exactly one '@' symbol";
+        return false;
+      }
+      if (password === "") {
+        pmsg.innerHTML = "Please fill up Password";
+        return false;
+      } else if (password.length < 8) {
+        pmsg.innerHTML = "Password must be at least 8 characters long";
+        return false;
+      }
+
+      return true;
+    }
+  </script>
 </body>
 </html>
