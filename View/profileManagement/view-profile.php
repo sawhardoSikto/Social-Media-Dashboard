@@ -36,7 +36,6 @@ if (isset($_SESSION['status'])){
     <br>
     <a href="edit-profile.php" class="profile-link">Edit Profile</a><br>
 
-    <a href="../logout.php">logout</a>
    
 </body>
 
