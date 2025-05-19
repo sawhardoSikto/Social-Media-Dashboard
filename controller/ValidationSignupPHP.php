@@ -8,7 +8,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['e
     $gender    = $_POST['gender'];
     $password  = trim($_POST['password']);
 
-    // Validation
+   
     if ($firstName == "") {
         echo "First name is required!";
     } else if ($lastName == "") {

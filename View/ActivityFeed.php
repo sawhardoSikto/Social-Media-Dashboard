@@ -168,15 +168,15 @@ if (isset($_SESSION['status'])) {
                 margin-right: 10px;
                 text-decoration: none;
                 color: #007bff;
-                
+
             }
-            .controls a:hover{
+
+            .controls a:hover {
                 text-decoration: underline;
 
             }
 
-            .controls:hover {
-            }
+            .controls:hover {}
 
             .comment-input {
                 padding: 5px 10px;
@@ -196,6 +196,34 @@ if (isset($_SESSION['status'])) {
             }
 
             button:hover {
+                background-color: #0056b3;
+            }
+
+  .create-post-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;          
+    font-size: 16px;         
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); 
+    transition: background-color 0.3s;
+}
+
+.create-post-button:hover {
+    background-color: #0056b3;
+}
+
+
+.create-post-button:hover {
+    background-color: #0056b3;
+}
+
+
+            .create-post-button:hover {
                 background-color: #0056b3;
             }
         </style>
@@ -227,6 +255,7 @@ if (isset($_SESSION['status'])) {
             <a href="DirectMessaging.php" class="message-button">💬 Message</a>
             <a href="Search_Filter.php" class="search-button">Search</a>
 
+
             <h2>Activity Feed</h2>
             <div>
                 <label for=""><input type="radio" name="feedtype" id="" onclick="showFeedType('Most Recent')" checked>Most
@@ -244,6 +273,8 @@ if (isset($_SESSION['status'])) {
                 <label class="story-label" for="">D</label>
                 <label class="story-label" for="">E</label>
             </div>
+            <div>            <a href="postCreation/postComposer.php" class="create-post-button">➕ Create Post</a>
+</div>
             <div>
                 <h3>Feed post</h3>
                 <div class="post">
