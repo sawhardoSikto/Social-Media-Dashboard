@@ -234,6 +234,7 @@ if (isset($_SESSION['status'])) {
             <img class="avater" src="usericon.svg" />
             <ul class="options d-none">
                 <li><a href="profileManagement/view-profile.php">View Profile</a></li>
+                <li><a href="dashboard/homeDashboard.php">DashBoard</a></li>
                 <li><a class="topOption" href="PrivacySetting.php">Settings and Privacy</a></li>
                 <li><a href="#">Change Password</a></li>
                 <li><a href="#">Activity Log</a></li>

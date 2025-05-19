@@ -189,10 +189,10 @@ if (isset($_SESSION['status'])){
         </div>
 
         <div class="chat">
-            <p>Arpi is typing...</p>
+            <p>Sikto is typing...</p>
 
             <div class="chat-message">
-                <span>Arpi:</span> Hey, how are you?
+                <span>Sikto:</span> Hey, how are you?
                 <div>❤️ 😂 👍</div>
             </div>
 
@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
             const botMessage = document.createElement('div');
             botMessage.className = 'chat-message';
-            botMessage.innerHTML = `<span>Arpi:</span> I am fine !<div>❤️ 😂 👍</div>`;
+            botMessage.innerHTML = `<span>Sikto:</span> I am fine !<div>❤️ 😂 👍</div>`;
             chatArea.insertBefore(botMessage, chatArea.lastElementChild);
         }, 1000);
     });
