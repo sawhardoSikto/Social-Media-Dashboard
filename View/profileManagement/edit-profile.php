@@ -17,7 +17,7 @@ if (isset($_SESSION['status'])){
         <img src="https://static.vecteezy.com/system/resources/previews/009/398/577/original/man-avatar-clipart-illustration-free-png.png"
             alt="Avatar" class="profile-avatar" width="100" height="100">
 
-        <form class="edit-form" onsubmit="return validateEditProfileForm()">
+        <form  class="edit-form" method="post" action="validationEditProfile.php" onsubmit="return validateEditProfileForm()">
             <div class="form-group">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" class="form-input" value="John Doe" />
@@ -48,7 +48,7 @@ if (isset($_SESSION['status'])){
     <script>
         function validateEditProfileForm() {
             var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
+            var email = document.getElementById("email").value; 
             var phone = document.getElementById("phone").value;
             var nameError = document.getElementById("nameError");
             var emailError = document.getElementById("emailError");
