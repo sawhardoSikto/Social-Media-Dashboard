@@ -199,28 +199,28 @@ if (isset($_SESSION['status'])) {
                 background-color: #0056b3;
             }
 
-  .create-post-button {
-    display: inline-block;
-    background-color: #007bff;
-    color: white;
-    padding: 8px 16px;          
-    font-size: 16px;         
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); 
-    transition: background-color 0.3s;
-}
+            .create-post-button {
+                display: inline-block;
+                background-color: #007bff;
+                color: white;
+                padding: 8px 16px;
+                font-size: 16px;
+                text-decoration: none;
+                border-radius: 6px;
+                font-weight: bold;
+                margin-bottom: 20px;
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+                transition: background-color 0.3s;
+            }
 
-.create-post-button:hover {
-    background-color: #0056b3;
-}
+            .create-post-button:hover {
+                background-color: #0056b3;
+            }
 
 
-.create-post-button:hover {
-    background-color: #0056b3;
-}
+            .create-post-button:hover {
+                background-color: #0056b3;
+            }
 
 
             .create-post-button:hover {
@@ -233,6 +233,7 @@ if (isset($_SESSION['status'])) {
         <div class="userInfo">
             <img class="avater" src="usericon.svg" />
             <ul class="options d-none">
+                <li><a href="profileManagement/view-profile.php">View Profile</a></li>
                 <li><a class="topOption" href="PrivacySetting.php">Settings and Privacy</a></li>
                 <li><a href="#">Change Password</a></li>
                 <li><a href="#">Activity Log</a></li>
@@ -273,8 +274,8 @@ if (isset($_SESSION['status'])) {
                 <label class="story-label" for="">D</label>
                 <label class="story-label" for="">E</label>
             </div>
-            <div>            <a href="postCreation/postComposer.php" class="create-post-button">➕ Create Post</a>
-</div>
+            <div> <a href="postCreation/postComposer.php" class="create-post-button">➕ Create Post</a>
+            </div>
             <div>
                 <h3>Feed post</h3>
                 <div class="post">
