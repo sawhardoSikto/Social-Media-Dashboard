@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_COOKIE['status'])){
+if (isset($_SESSION['status'])){
 ?>
 
 <!DOCTYPE html>
@@ -46,6 +46,6 @@ if (isset($_COOKIE['status'])){
 
 }
 else{
-    header('location: ../loginAuth.php');
+    header('location: ../LoginAuth.html');
 }
 ?>
