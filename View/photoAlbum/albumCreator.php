@@ -23,7 +23,8 @@ if (isset($_SESSION['status'])){
             <button type="submit">Save Album</button>
             <p id="albumSuccessMsg" class="success-message"></p>
         </form>
-        <a href="bulkSelector.php" class="nav-link">Go to Bulk Selector</a>
+        <a href="bulkSelector.php" class="nav-link">Go to Bulk Selector</a> <br>
+        <a href="../ActivityFeed.php" class="nav-link">Go to Activity Feed</a>
     </div>
 
     <script>

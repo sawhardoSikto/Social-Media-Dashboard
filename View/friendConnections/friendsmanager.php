@@ -51,7 +51,8 @@ if (isset($_SESSION['status'])){
         </table>
 
         <a href="followRequests.php" class="nav-link">Manage Requests</a><br>
-        <a href="suggestionEngine.php" class="nav-link">People You May Know</a>
+        <a href="suggestionEngine.php" class="nav-link">People You May Know</a> <br>
+        <a href="../ActivityFeed.php" class="nav-link">Go to Activity Feed</a>
     </div>
 </body>
 
