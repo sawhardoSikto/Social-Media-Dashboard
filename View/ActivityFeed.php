@@ -226,6 +226,8 @@ if (isset($_SESSION['status'])) {
             .create-post-button:hover {
                 background-color: #0056b3;
             }
+      
+
         </style>
     </head>
 
@@ -239,6 +241,7 @@ if (isset($_SESSION['status'])) {
                 <li><a href="profileManagement/update-password.php">Change Password</a></li>
                 <li><a href="#">Activity Log</a></li>
                 <li><a href=" ../controller/logoutCheck.php" class="bottomOption">logout</a></li>
+                <li><a href="ContactUsFrom.php" class="bottomOption">Contact With Us</a></li>
             </ul>
         </div>
         <header></header>
@@ -254,6 +257,8 @@ if (isset($_SESSION['status'])) {
                 })
 
             </script>
+            
+
             <a href="DirectMessaging.php" class="message-button">💬 Message</a>
             <a href="Search_Filter.php" class="search-button">Search</a>
 
