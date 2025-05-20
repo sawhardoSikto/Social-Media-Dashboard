@@ -236,7 +236,7 @@ if (isset($_SESSION['status'])) {
                 <li><a href="profileManagement/view-profile.php">View Profile</a></li>
                 <li><a href="dashboard/homeDashboard.php">DashBoard</a></li>
                 <li><a class="topOption" href="PrivacySetting.php">Settings and Privacy</a></li>
-                <li><a href="#">Change Password</a></li>
+                <li><a href="profileManagement/update-password.php">Change Password</a></li>
                 <li><a href="#">Activity Log</a></li>
                 <li><a href=" ../controller/logoutCheck.php" class="bottomOption">logout</a></li>
             </ul>
