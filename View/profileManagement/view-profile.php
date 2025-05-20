@@ -34,7 +34,8 @@ if (isset($_SESSION['status'])){
         </tr>
     </table>
     <br>
-    <a href="edit-profile.php" class="profile-link">Edit Profile</a><br>
+    <a href="edit-profile.php" class="profile-link">Edit Profile</a>
+    <a href="../profileCustomization/profileEditor.php" class="profile-link">Customize Profile</a><br>
 
    
 </body>

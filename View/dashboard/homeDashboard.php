@@ -28,7 +28,10 @@ if (isset($_SESSION['status'])){
                 <p>87%</p>
             </div>
         </div>
-        <a href="quickActions.php" class="nav-link">Go to Quick Actions</a>
+        <a href="quickActions.php" class="nav-link">Go to Quick Actions</a> <br>
+        <a href="../photoAlbum/albumCreator.php" class="nav-link">Go to Photo Album</a> <br>
+        <a href="../friendConnections/friendsmanager.php" class="nav-link">Go to Friend Manager</a> <br>
+
     </div>
 </body>
 
