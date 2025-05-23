@@ -1,4 +1,5 @@
 <?php
+require_once("../model/userModel.php");
 if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && 
     isset($_POST['gender']) && isset($_POST['password'])) {
 
@@ -24,12 +25,20 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['e
     } else if (strlen($password) < 8) {
         echo "Password must be at least 8 characters long!";
     } else {
+        $user=['firstName'=>$firstName,'lastName'=>$lastName,'email'=>$email,'gender'=>$gender,'password'=>$password];
+        $status=addUser($user);
+        if ($status) {
 
-        header("Location: ../view/LoginAuth.html");
-        exit();
+            header("Location: ../view/LoginAuth.html");
+        }
+        else{
+            header("Location: ../view/SignupAuth.html");
+        }
+
+      
     }
 
 } else {
-    header("Location: ../view/LoginAuth.html");
+    echo "invalid echo!";
 }
 ?>

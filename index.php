@@ -1,5 +1,5 @@
 <?php
 
-header("location: view/SingupAuth.php");
+header("location: view/SingupAuth.html");
 
 ?>

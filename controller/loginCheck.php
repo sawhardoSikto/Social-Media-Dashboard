@@ -1,19 +1,26 @@
 <?php
+
     session_start();
+    require_once("../model/userModel.php");
     if(isset($_POST['submit'])){
         $username = trim($_POST['email']);
         $password = trim($_POST['password']);
 
-        if($username == "" || $password == ""){
-            echo "null username/password!";
-        }else if($username === $password){
-            $_SESSION['status'] = true;
+       if ($username === "" || $password === "") {
+        echo "Null username/password!";
+        exit;
+    } else {
+        $user = ['username' => $username, 'password' => $password];
+        $status = login($user);
+        if ($status) {
+             $_SESSION['status'] = true;
             header('location: ../view/ActivityFeed.php');
-            //echo "valid user!";
-        }else{
-            echo "invalid user!";
+            exit();
+        } else {
+            echo "Invalid username or password!";
         }
-    }else{
-        echo "Invalid request! Please submit form!";
     }
+} else {
+    echo "Invalid request! Please submit the form!";
+}
 ?>
