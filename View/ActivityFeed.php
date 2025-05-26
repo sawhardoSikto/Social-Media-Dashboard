@@ -226,8 +226,6 @@ if (isset($_SESSION['status'])) {
             .create-post-button:hover {
                 background-color: #0056b3;
             }
-      
-
         </style>
     </head>
 
@@ -257,7 +255,7 @@ if (isset($_SESSION['status'])) {
                 })
 
             </script>
-            
+
 
             <a href="DirectMessaging.php" class="message-button">💬 Message</a>
             <a href="Search_Filter.php" class="search-button">Search</a>
@@ -284,7 +282,7 @@ if (isset($_SESSION['status'])) {
             </div>
             <div>
                 <h3>Feed post</h3>
-                <div class="post">
+                <div class="post" data-post-id="1">
                     <p> <strong>@sawhardo</strong> waching movie!</p>
                     <p class="controls">
                         <a href="#" onclick="likepost(this)">Like (<span class="like-count">10</span>)</a>
@@ -292,12 +290,13 @@ if (isset($_SESSION['status'])) {
                         <br />
                         <br />
                         <input type="text" class="comment-input" placeholder="Write a comment...">
-                        <button>comment</button>
-                    <div class="comment"></div>
+                        <button onclick="postComment(this)">comment</button>
+                    <ul class="comment-box"></ul>
+
                     </p>
                 </div>
                 <br />
-                <div class="post">
+                <div class="post" data-post-id="1">
                     <p> <strong>@sawhardo</strong> playing badminton!</p>
                     <p class="controls">
                         <a href="#" onclick="likepost(this)">Like (<span class="like-count">10</span>)</a>
@@ -305,24 +304,62 @@ if (isset($_SESSION['status'])) {
                         <br />
                         <br />
                         <input type="text" class="comment-input" placeholder="Write a comment...">
-                        <button>comment</button>
-                    <div class="comment"></div>
+                        <button onclick="postComment(this)">comment</button>
+                    <ul class="comment-box"></ul>
                     </p>
                 </div>
             </div>
         </main>
         <script>
-            function likepost(link) {
-                const like = link.querySelector(".like-count")
-                let count = parseInt(like.innerHTML);
-                like.innerHTML = count + 1;
+            function postComment(btn) {
+                const post = btn.closest(".post");
+                const input = post.querySelector(".comment-input");
+                const commentBox = post.querySelector(".comment-box");
+                const postId = post.getAttribute("data-post-id");
+                const comment = input.value.trim();
+
+                if (comment === "") {
+                    alert("Comment cannot be empty.");
+                    return;
+                }
+
+                // Send via AJAX
+                const json = {
+                    comment: comment
+                };
+                let data = JSON.stringify(json);
+                const xhttp = new XMLHttpRequest();
+                xhttp.open('post', '../controller/commentHandler.php', true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send('json=' + data);
+
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState === 4 && xhttp.status === 200) {
+                        const response = JSON.parse(xhttp.responseText);
+                        if (response.success) {
+                            const li = document.createElement("li");
+                            li.textContent = response.comment;
+                            commentBox.appendChild(li);
+                            input.value = "";
+                        } else {
+                            alert("Error adding comment.");
+                        }
+                    }
+                };
+            }
+              
+
+                function likepost(link) {
+                    const like = link.querySelector(".like-count")
+                    let count = parseInt(like.innerHTML);
+                    like.innerHTML = count + 1;
 
 
-            }
-            function showFeedType(type) {
-                const lebel = document.getElementById("feedTypeLabel")
-                lebel.innerHTML = "Showing: " + type;
-            }
+                }
+                function showFeedType(type) {
+                    const lebel = document.getElementById("feedTypeLabel")
+                    lebel.innerHTML = "Showing: " + type;
+                }
 
         </script>
     </body>
