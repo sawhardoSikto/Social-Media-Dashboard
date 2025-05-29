@@ -216,11 +216,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const chatArea = document.querySelector('.chat');
 
     sendButton.addEventListener('click', function () {
-        const message = messageInput.value.trim();
+        let message = messageInput.value.trim();
         if (message === '') return;
 
       
-        const userMessage = document.createElement('div');
+        let userMessage = document.createElement('div');
         userMessage.className = 'chat-message you';
         userMessage.innerHTML = `<span>You:</span> ${message}<div>❤️ 😂 👍</div>`;
         chatArea.insertBefore(userMessage, chatArea.lastElementChild);

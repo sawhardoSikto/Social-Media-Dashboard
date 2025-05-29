@@ -312,24 +312,25 @@ if (isset($_SESSION['status'])) {
         </main>
         <script>
             function postComment(btn) {
-                const post = btn.closest(".post");
-                const input = post.querySelector(".comment-input");
-                const commentBox = post.querySelector(".comment-box");
-                const postId = post.getAttribute("data-post-id");
-                const comment = input.value.trim();
+                let post = btn.closest(".post");
+                let input = post.querySelector(".comment-input");
+                let commentBox = post.querySelector(".comment-box");
+                let postId = post.getAttribute("data-post-id");
+                let comment = input.value.trim();
 
                 if (comment === "") {
                     alert("Comment cannot be empty.");
                     return;
                 }
 
-                // Send via AJAX
                 const json = {
-                    comment: comment
+                    comment: comment,
+                    post_id: postId
                 };
-                let data = JSON.stringify(json);
+
+                const data = JSON.stringify(json);
                 const xhttp = new XMLHttpRequest();
-                xhttp.open('post', '../controller/commentHandler.php', true);
+                xhttp.open('POST', '../controller/commentHandler.php', true);
                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 xhttp.send('json=' + data);
 
@@ -342,24 +343,25 @@ if (isset($_SESSION['status'])) {
                             commentBox.appendChild(li);
                             input.value = "";
                         } else {
-                            alert("Error adding comment.");
+                            alert("Error: " + response.error);
                         }
                     }
                 };
             }
-              
-
-                function likepost(link) {
-                    const like = link.querySelector(".like-count")
-                    let count = parseInt(like.innerHTML);
-                    like.innerHTML = count + 1;
 
 
-                }
-                function showFeedType(type) {
-                    const lebel = document.getElementById("feedTypeLabel")
-                    lebel.innerHTML = "Showing: " + type;
-                }
+
+            function likepost(link) {
+                const like = link.querySelector(".like-count")
+                let count = parseInt(like.innerHTML);
+                like.innerHTML = count + 1;
+
+
+            }
+            function showFeedType(type) {
+                const lebel = document.getElementById("feedTypeLabel")
+                lebel.innerHTML = "Showing: " + type;
+            }
 
         </script>
     </body>
