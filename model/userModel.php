@@ -36,4 +36,10 @@
     }
 }
 
+function updateUser($oldEmail, $firstName, $lastName, $newEmail){
+    $con = getConnection();
+    $sql = "UPDATE users SET fname='$firstName', lname='$lastName', email='$newEmail' WHERE email='$oldEmail'";
+    return mysqli_query($con, $sql);
+}
+
 ?>
