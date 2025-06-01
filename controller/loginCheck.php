@@ -14,6 +14,7 @@
         $status = login($user);
         if ($status) {
              $_SESSION['status'] = true;
+             $_SESSION['email'] = $username;
             header('location: ../view/ActivityFeed.php');
             exit();
         } else {
