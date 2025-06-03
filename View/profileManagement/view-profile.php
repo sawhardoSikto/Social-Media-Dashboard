@@ -40,6 +40,7 @@ if (isset($_SESSION['status']) && isset($_SESSION['email'])) {
     <br>
     <a href="edit-profile.php" class="profile-link">Edit Profile</a>
     <a href="../profileCustomization/profileEditor.php" class="profile-link">Customize Profile</a><br>
+    <a href="../ActivityFeed.php" class="profile-link">Activity Feed</a><br>
 </body>
 </html>
 <?php

@@ -42,4 +42,10 @@ function updateUser($oldEmail, $firstName, $lastName, $newEmail){
     return mysqli_query($con, $sql);
 }
 
+function updatePassword($email, $newPassword){
+    $con = getConnection();
+    $sql = "UPDATE users SET password='$newPassword' WHERE email='$email'";
+    return mysqli_query($con, $sql);
+}
+
 ?>
