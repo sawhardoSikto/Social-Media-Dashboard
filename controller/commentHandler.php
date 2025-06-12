@@ -1,27 +1,29 @@
 <?php
-require_once('../model/db.php');
+require_once('../model/commentModel.php');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['json'])) {
-    $data = json_decode($_POST['json'], true);
+    $data = json_decode($_POST['json']);
     $postId = intval($data['post_id']);
-    $username = 'sawhardo'; // You can fetch it from session if using login system
+    $username = 'sawhardo';
     $comment = trim($data['comment']);
 
     if ($comment !== "" && $postId > 0) {
-        $con = getConnection();
-        $sql = "INSERT INTO comments (post_id, username, content) VALUES ('$postId', '$username', '$comment')";
-        if (mysqli_query($con, $sql)) {
+        if (addComment($postId, $username, $comment)) {
             echo json_encode([
                 'success' => true,
-                'comment' => "You: " . htmlspecialchars($comment)
+                'comment' => "<strong>You:</strong> " . htmlspecialchars($comment)
             ]);
         } else {
-            echo json_encode(['success' => false, 'error' => 'DB error']);
+            echo json_encode(['success' => false, 'error' => 'DB insert error']);
         }
-    } else {
-        echo json_encode(['success' => false, 'error' => 'Invalid comment']);
-    }
-} else {
+    } 
+
+else if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['post_id'])) {
+    $postId = intval($_GET['post_id']);
+    $comments = getCommentsByPostId($postId);
+    echo json_encode(['success' => true, 'comments' => $comments]);
+}
+
+else {
     echo json_encode(['success' => false, 'error' => 'Invalid request']);
 }
 ?>

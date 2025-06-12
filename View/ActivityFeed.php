@@ -323,22 +323,22 @@ if (isset($_SESSION['status'])) {
                     return;
                 }
 
-                const json = {
+                let json = {
                     comment: comment,
                     post_id: postId
                 };
 
-                const data = JSON.stringify(json);
-                const xhttp = new XMLHttpRequest();
+                let data = JSON.stringify(json);
+                let xhttp = new XMLHttpRequest();
                 xhttp.open('POST', '../controller/commentHandler.php', true);
                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 xhttp.send('json=' + data);
 
                 xhttp.onreadystatechange = function () {
                     if (xhttp.readyState === 4 && xhttp.status === 200) {
-                        const response = JSON.parse(xhttp.responseText);
+                        let response = JSON.parse(xhttp.responseText);
                         if (response.success) {
-                            const li = document.createElement("li");
+                            let li = document.createElement("li");
                             li.textContent = response.comment;
                             commentBox.appendChild(li);
                             input.value = "";
